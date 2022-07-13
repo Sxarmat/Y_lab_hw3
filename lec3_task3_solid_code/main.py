@@ -16,4 +16,3 @@ if __name__ == '__main__':
     print('-' * 20)
     save_the_place(SuperHero('Chack Norris', False), Tokyo())
 
-
