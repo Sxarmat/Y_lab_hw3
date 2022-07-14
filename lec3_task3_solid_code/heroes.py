@@ -22,25 +22,30 @@ class SuperHero(ABC):
         pass
 
 
-class Superman(Laser, Fighter, SuperHero):
+class Superman(SuperHero):
 
     def __init__(self, can_use_ultimate_attack=True):
         super(Superman, self).__init__('Clark Kent', can_use_ultimate_attack)
 
     def attack(self):
-        return self.kick()
+        arsenal = Fighter()
+        arsenal.kick()
 
     def ultimate(self):
-        return self.incinerate_with_lasers()
+        arsenal = Laser()
+        arsenal.incinerate_with_lasers()
 
 
-class ChackNorris(Gun, SuperHero):
+class ChackNorris(SuperHero):
 
     def __init__(self, can_use_ultimate_attack=True):
         super(ChackNorris, self).__init__('Chack Noris', can_use_ultimate_attack)
 
     def attack(self):
-        return self.fire_a_gun()
+        arsenal = Gun()
+        arsenal.fire_a_gun()
 
     def ultimate(self):
-        return self.fire_a_machine_gun()
+        arsenal = Gun()
+        arsenal.fire_a_machine_gun()
+
