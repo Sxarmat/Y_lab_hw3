@@ -1,5 +1,5 @@
 from typing import Union
-from heroes import Superman, SuperHero
+from heroes import Superman, ChackNorris, SuperHero
 from places import Kostroma, Tokyo
 from mass_media import MassMedia
 
@@ -16,5 +16,7 @@ if __name__ == '__main__':
     media = MassMedia()
     save_the_place(Superman(), Kostroma(), media)
     print('-' * 20)
-    save_the_place(SuperHero('Chack Norris', False), Tokyo(), media)
+    save_the_place(ChackNorris(False), Tokyo(), media)
+
+
 

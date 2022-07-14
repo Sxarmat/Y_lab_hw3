@@ -1,8 +1,9 @@
+from abc import ABC, abstractmethod
 from antagonistfinder import AntagonistFinder
 from skills import Laser, Gun, Fighter
 
 
-class SuperHero:
+class SuperHero(ABC):
 
     def __init__(self, name, can_use_ultimate_attack=True):
         self.name = name
@@ -12,13 +13,13 @@ class SuperHero:
     def find(self, place):
         self.finder.get_antagonist(place)
 
+    @abstractmethod
     def attack(self):
-        arsenal = Gun()
-        arsenal.fire_a_gun()
+        pass
 
+    @abstractmethod
     def ultimate(self):
-        arsenal = Gun()
-        arsenal.fire_a_machine_gun()
+        pass
 
 
 class Superman(SuperHero):
@@ -34,3 +35,16 @@ class Superman(SuperHero):
         arsenal = Laser()
         arsenal.incinerate_with_lasers()
 
+
+class ChackNorris(SuperHero):
+
+    def __init__(self, can_use_ultimate_attack=True):
+        super(ChackNorris, self).__init__('Chack Noris', can_use_ultimate_attack)
+
+    def attack(self):
+        arsenal = Gun()
+        arsenal.fire_a_gun()
+
+    def ultimate(self):
+        arsenal = Gun()
+        arsenal.fire_a_machine_gun()
