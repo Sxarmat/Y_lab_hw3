@@ -24,8 +24,8 @@ class SuperHero(ABC):
 
 class Superman(SuperHero):
 
-    def __init__(self):
-        super(Superman, self).__init__('Clark Kent', True)
+    def __init__(self, can_use_ultimate_attack=True):
+        super(Superman, self).__init__('Clark Kent', can_use_ultimate_attack)
 
     def attack(self):
         arsenal = Fighter()
